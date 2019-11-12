@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-xs-12">
       <app-server-element *ngFor="let serverElem of serverElements" [srvElement]="serverElem">
-        <p>
+        <p #contentParagraph>
           <strong *ngIf="serverElem.type === 'server'" style="color: red">{{ serverElem.content }}</strong>
           <em *ngIf="serverElem.type === 'blueprint'">{{ serverElem.content }}</em>
         </p>
@@ -15,3 +15,16 @@
     </div>
   </div>
 </div>
+<!--<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-odd *ngFor="let oddNb of oddNumbers" [number]="oddNb"></app-odd>
+      <app-even *ngFor="let evenNb of evenNumbers" [number]="evenNb"></app-even>
+    </div>
+  </div>
+</div>-->
