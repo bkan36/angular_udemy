@@ -1,9 +1,10 @@
 import {NgModule} from '@angular/core';
+
 import {ShoppingListComponent} from './shopping-list.component';
 import {ShoppingEditComponent} from './shopping-edit/shopping-edit.component';
+
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
-import {ShoppingRoutingModel} from './shopping-routing.model';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
@@ -12,10 +13,11 @@ import {FormsModule} from '@angular/forms';
     ShoppingEditComponent
   ],
   imports: [
-    RouterModule,
+    RouterModule.forChild([
+      {path: 'shopping-list', component: ShoppingListComponent}
+    ]),
     CommonModule,
-    FormsModule,
-    ShoppingRoutingModel
+    FormsModule
   ]
 })
 export class ShoppingModule {
