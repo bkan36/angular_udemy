@@ -96,11 +96,12 @@ export class AuthEffects {
           })
         .pipe(
           tap(resData => {
+            console.log('TOKEN TOMER');
             this.authService.setLogoutTimer(+resData.expiresIn * 1000);
+            console.log('TOKEN TOMER');
           }),
           map(resData => {
             return handleAuthentication(resData);
-
           }),
           catchError(errorRes => {
             return handleError(errorRes);
@@ -152,7 +153,7 @@ export class AuthEffects {
         });
 
       }
-      return {type: 'DUMMY'};
+      return ;
     })
   );
 
