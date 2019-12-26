@@ -33,12 +33,13 @@ export function AuthReducer(state = initialState, action: AuthListActions.AuthAc
         user: null
       };
     case AuthListActions.LOGIN_START:
+    case AuthListActions.SIGNUP_START:
       return {
         ...state,
         authError: null,
         loading: true
       };
-      case AuthListActions.AUTHENTICATE_FAIL:
+    case AuthListActions.AUTHENTICATE_FAIL:
       return {
         ...state,
         user: null,
@@ -49,9 +50,8 @@ export function AuthReducer(state = initialState, action: AuthListActions.AuthAc
       return {
         ...state,
         authError: null
-      }
+      };
     default:
       return state;
-
   }
 }
