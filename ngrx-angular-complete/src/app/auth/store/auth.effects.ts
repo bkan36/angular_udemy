@@ -96,9 +96,7 @@ export class AuthEffects {
           })
         .pipe(
           tap(resData => {
-            console.log('TOKEN TOMER');
             this.authService.setLogoutTimer(+resData.expiresIn * 1000);
-            console.log('TOKEN TOMER');
           }),
           map(resData => {
             return handleAuthentication(resData);
@@ -130,7 +128,7 @@ export class AuthEffects {
       } = JSON.parse(localStorage.getItem('userData'));
 
       if (!userData) {
-        return ;
+        return {type: 'DUMMY'};
       }
 
       const loadedUser = new User(
@@ -153,7 +151,7 @@ export class AuthEffects {
         });
 
       }
-      return ;
+      return {type: 'DUMMY'};
     })
   );
 

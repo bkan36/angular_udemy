@@ -52,6 +52,6 @@ export function AuthReducer(state = initialState, action: AuthListActions.AuthAc
         authError: null
       };
     default:
-      return {...state};
+      return state;
   }
 }
