@@ -26,11 +26,7 @@ import {RecipeEffects} from './recipes/store/recipe.effects';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    StoreModule.forRoot(fromApp.appReducer, {
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true
-      }}),
+    StoreModule.forRoot(fromApp.appReducer),
     EffectsModule.forRoot([AuthEffects, RecipeEffects]),
     StoreDevtoolsModule.instrument({logOnly: environment.production}),
     StoreRouterConnectingModule.forRoot(),
